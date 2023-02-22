@@ -20,7 +20,10 @@ function TaskForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addTask(task));
+    dispatch(addTask({
+      ...task,
+      id: uuid()
+    }));
   };
 
   return (
